@@ -4,7 +4,7 @@ import { Input, Form, Button, Label } from './ContactForm.styled';
 import PropTypes from 'prop-types';
 
 class ContactForm extends Component {
-  static propTypes = { submit: PropTypes.func.isRequired };
+  // static propTypes = { submit: PropTypes.func.isRequired };
 
   state = { id: '', name: '', number: '' };
 
@@ -60,4 +60,5 @@ class ContactForm extends Component {
   }
 }
 
+ContactForm.propTypes = { submit: PropTypes.func.isRequired };
 export default ContactForm;
