@@ -11,7 +11,6 @@ function App() {
   });
   const [filter, setFilter] = useState('');
   useEffect(() => {
-    // console.log('запускается юзефект ');
     window.localStorage.setItem('Contacts', JSON.stringify(contacts));
   }, [contacts]);
 

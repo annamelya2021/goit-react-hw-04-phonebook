@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
 
 *,
 *::before,
@@ -30,6 +30,5 @@ img {
 
 ul,
 ol {
-
   list-style: none;
 }
