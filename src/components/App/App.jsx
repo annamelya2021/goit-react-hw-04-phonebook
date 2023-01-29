@@ -20,19 +20,20 @@ function App() {
         ({ name }) => name.toLowerCase() === data.name.toLowerCase()
       )
     ) {
-      Notify.failure(`${data.name} is already in contacts`);
+      return Notify.failure(`${data.name} is already in contacts`);
     }
     setContacts([...contacts, data]);
   };
 
   const filterNamesAdd = data => {
     setFilter(data);
-    filterByName();
   };
 
   const filterByName = () => {
     const normalized = filter.toLocaleLowerCase();
-    return [...contacts].filter(contact => contact.name.includes(normalized));
+    return contacts.filter(contact =>
+      contact.name.toLocaleLowerCase().includes(normalized)
+    );
   };
 
   const onDeleteContacts = id => {
