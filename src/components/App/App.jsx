@@ -25,10 +25,6 @@ function App() {
     setContacts([...contacts, data]);
   };
 
-  const filterNamesAdd = data => {
-    setFilter(data);
-  };
-
   const filterByName = () => {
     const normalized = filter.toLocaleLowerCase();
     return contacts.filter(contact =>
@@ -39,14 +35,14 @@ function App() {
   const onDeleteContacts = id => {
     setContacts([...contacts].filter(contact => contact.id !== id));
   };
-  const data = filterByName();
+
   return (
     <Container>
       <h1>Phonebook</h1>
       <ContactForm submit={addContact} />
       <h2>Contacts</h2>
-      <Filter filter={filterNamesAdd} />
-      <ContactsList data={data} onDeleteContacts={onDeleteContacts} />
+      <Filter filter={setFilter} />
+      <ContactsList data={filterByName()} onDeleteContacts={onDeleteContacts} />
     </Container>
   );
 }
